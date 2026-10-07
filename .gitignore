@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local AI/editor tools
+.agents/
+.claude/
+.cursor/
+.devin/
+
+# temporary files
+*.tmp*
