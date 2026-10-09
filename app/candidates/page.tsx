@@ -1,11 +1,10 @@
+
 import Link from "next/link";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { PrismaClient } from "../../generated/prisma/client";
+import { prisma } from "../../lib/prisma";
 import { verifySessionToken } from "../../lib/session";
 import CandidateStatus from "./CandidateStatus";
-
-const prisma = new PrismaClient();
 
 export default async function CandidatesPage() {
   const cookieStore = await cookies();
@@ -48,10 +47,7 @@ export default async function CandidatesPage() {
       {/* Topbar */}
       <header className="border-b border-white/10 bg-[#0F172A]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
-          <Link
-            href="/dashboard"
-            className="flex items-center gap-3"
-          >
+          <Link href="/dashboard" className="flex items-center gap-3">
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#4F46E5] text-sm font-bold text-white">
               H
             </span>
