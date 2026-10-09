@@ -1,11 +1,10 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { PrismaClient } from "../../generated/prisma/client";
+import { prisma } from "../../lib/prisma";
 import LogoutButton from "./LogoutButton";
 import { verifySessionToken } from "../../lib/session";
 
-const prisma = new PrismaClient();
 
 const pipelineStages = [
   "Applied",

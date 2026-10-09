@@ -1,9 +1,8 @@
+
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { PrismaClient } from "../../../../generated/prisma/client";
+import { prisma } from "../../../../lib/prisma";
 import { verifySessionToken } from "../../../../lib/session";
-
-const prisma = new PrismaClient();
 
 const allowedStatuses = [
   "Applied",

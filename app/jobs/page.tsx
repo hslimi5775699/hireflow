@@ -1,10 +1,9 @@
+
 import Link from "next/link";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { PrismaClient } from "../../generated/prisma/client";
+import { prisma } from "../../lib/prisma";
 import { verifySessionToken } from "../../lib/session";
-
-const prisma = new PrismaClient();
 
 export default async function JobsPage() {
   const cookieStore = await cookies();
